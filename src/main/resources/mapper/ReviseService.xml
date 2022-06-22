@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.uuz.service.ReviseService">
+
+    <select id="verify" resultType="com.example.uuz.bean.Users1BeanVO">
+        select *
+        from users1
+        where UserName = #{userName}
+          and PassWord = #{passWord}
+    </select>
+
+    <update id="sureUpdate">
+        UPDATE users1 SET PassWord= #{passWord} WHERE UserName = #{userName}
+    </update>
+</mapper>

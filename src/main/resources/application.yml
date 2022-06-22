@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/uuz?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=UTF8
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 1000
+    servlet:
+      multipart:
+      max-file-size: 50MB
+      max-request-size: 60MB
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*.xml  #??????
+  type-aliases-package: com.example.mybatis.Bean #?????
+
+server:
+  port: 8081
+
+logging:
+  level:
+    root: info
